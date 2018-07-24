@@ -1,0 +1,11 @@
+E:\ThucTap\QLNS\QLNS\bin\Debug\netcoreapp2.0\QLNS.deps.json
+E:\ThucTap\QLNS\QLNS\bin\Debug\netcoreapp2.0\QLNS.runtimeconfig.json
+E:\ThucTap\QLNS\QLNS\bin\Debug\netcoreapp2.0\QLNS.runtimeconfig.dev.json
+E:\ThucTap\QLNS\QLNS\bin\Debug\netcoreapp2.0\QLNS.dll
+E:\ThucTap\QLNS\QLNS\obj\Debug\netcoreapp2.0\QLNS.csprojAssemblyReference.cache
+E:\ThucTap\QLNS\QLNS\obj\Debug\netcoreapp2.0\QLNS.csproj.CoreCompileInputs.cache
+E:\ThucTap\QLNS\QLNS\obj\Debug\netcoreapp2.0\QLNS.AssemblyInfoInputs.cache
+E:\ThucTap\QLNS\QLNS\obj\Debug\netcoreapp2.0\QLNS.AssemblyInfo.cs
+E:\ThucTap\QLNS\QLNS\bin\Debug\netcoreapp2.0\QLNS.pdb
+E:\ThucTap\QLNS\QLNS\obj\Debug\netcoreapp2.0\QLNS.dll
+E:\ThucTap\QLNS\QLNS\obj\Debug\netcoreapp2.0\QLNS.pdb
