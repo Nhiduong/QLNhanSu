@@ -13353,11 +13353,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\ThucTap\\QLNS\\QLNS\\QLNS.csproj",
+      "projectUniqueName": "E:\\ThucTap\\QLNhanSu\\QLNhanSu\\QLNS\\QLNS.csproj",
       "projectName": "QLNS",
-      "projectPath": "E:\\ThucTap\\QLNS\\QLNS\\QLNS.csproj",
+      "projectPath": "E:\\ThucTap\\QLNhanSu\\QLNhanSu\\QLNS\\QLNS.csproj",
       "packagesPath": "C:\\Users\\ADMIN\\.nuget\\packages\\",
-      "outputPath": "E:\\ThucTap\\QLNS\\QLNS\\obj\\",
+      "outputPath": "E:\\ThucTap\\QLNhanSu\\QLNhanSu\\QLNS\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

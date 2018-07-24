@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-
+using Dapper;
+using System.Data;
+using System.Data.SqlClient;
 namespace QLNS.Model
 {
     public partial class Phongban
