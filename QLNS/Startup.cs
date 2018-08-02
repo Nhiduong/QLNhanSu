@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Routing;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
@@ -37,7 +38,21 @@ namespace QLNS
                 app.UseDeveloperExceptionPage();
             }
 
-            app.UseMvc();
+            app.UseMvc(routes =>
+            {
+
+
+                routes.MapRoute(
+
+                    name: "Details",
+                    template: "Details/{id?}"
+                //defaults: new { controller = "HopDongController", action = "Details", id="1"}
+
+                );
+
+
+            });
+
         }
     }
 }

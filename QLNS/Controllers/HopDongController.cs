@@ -24,6 +24,7 @@ namespace QLNS.Controllers
         }
 
         // GET: 
+        [Route("Details")]
         [HttpGet("{id}")]
         public async Task<IActionResult> Get(int? id)
         {

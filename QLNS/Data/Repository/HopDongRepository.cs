@@ -23,13 +23,16 @@ namespace QLNS.Data.Repository
                 await sqlConnection.OpenAsync();
 
                 var dynamicParameters = new DynamicParameters();
+                dynamicParameters.Add("@id", entity.Sohopdong);
                 dynamicParameters.Add("@sohopdong", entity.Sohopdong);
                 dynamicParameters.Add("@ten", entity.Ten);
                 dynamicParameters.Add("@noidung", entity.Noidung);
-                dynamicParameters.Add("@ngaylap", entity.Ngaylap);
-                dynamicParameters.Add("@dateadd", entity.Dateadd);
-                dynamicParameters.Add("@useradd", entity.Useradd);
+                dynamicParameters.Add("@ngaylap", null);
 
+                dynamicParameters.Add("@dateadd", null);
+                dynamicParameters.Add("@useradd", null);
+                dynamicParameters.Add("@dateedit", null);
+                dynamicParameters.Add("@useredit", null);
                 await sqlConnection.ExecuteAsync(
                     "usp_InsertHopDong",
                     dynamicParameters,
@@ -37,9 +40,9 @@ namespace QLNS.Data.Repository
             }
         }
 
-        public async Task Delete(int id)
+        public async Task Delete(int? id)
         {
-           
+
             using (var sqlConnection = new SqlConnection(connectionString))
             {
                 await sqlConnection.OpenAsync();
@@ -55,11 +58,6 @@ namespace QLNS.Data.Repository
             }
         }
 
-        public Task Delete(int? id)
-        {
-            throw new NotImplementedException();
-        }
-
         public async Task<IEnumerable<Hopdong>> getAll()
         {
             using (var sqlConnection = new SqlConnection(connectionString))
@@ -73,7 +71,7 @@ namespace QLNS.Data.Repository
             }
         }
 
-        public async Task<Hopdong> getById(int id)
+        public async Task<Hopdong> getById(int? id)
         {
             using (var sqlConnection = new SqlConnection(connectionString))
             {
@@ -90,11 +88,6 @@ namespace QLNS.Data.Repository
             }
         }
 
-        public Task<Hopdong> getById(int? id)
-        {
-            throw new NotImplementedException();
-        }
-
         public async Task Update(Hopdong entity)
         {
             using (var sqlConnection = new SqlConnection(connectionString))
@@ -103,7 +96,7 @@ namespace QLNS.Data.Repository
 
                 var dynamicParameters = new DynamicParameters();
 
-                dynamicParameters.Add("@id", entity.id);
+
                 dynamicParameters.Add("@sohopdong", entity.Sohopdong);
                 dynamicParameters.Add("@ten", entity.Ten);
                 dynamicParameters.Add("@noidung", entity.Noidung);
