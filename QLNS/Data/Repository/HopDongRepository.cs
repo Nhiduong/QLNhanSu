@@ -12,7 +12,7 @@ namespace QLNS.Data.Repository
 {
     public class HopDongRepository : IHopDongRepository
     {
-        private readonly string connectionString = "Data Source=.;Initial Catalog=QLNS;Integrated Security=True";
+        private readonly string connectionString = @"Data Source=DESKTOP-62473AB\SQLEXPRESS;Initial Catalog=QLNS;Integrated Security=True";
 
         private SqlConnection sqlConnection;
 
@@ -23,7 +23,6 @@ namespace QLNS.Data.Repository
                 await sqlConnection.OpenAsync();
 
                 var dynamicParameters = new DynamicParameters();
-
                 dynamicParameters.Add("@sohopdong", entity.Sohopdong);
                 dynamicParameters.Add("@ten", entity.Ten);
                 dynamicParameters.Add("@noidung", entity.Noidung);
@@ -56,6 +55,11 @@ namespace QLNS.Data.Repository
             }
         }
 
+        public Task Delete(int? id)
+        {
+            throw new NotImplementedException();
+        }
+
         public async Task<IEnumerable<Hopdong>> getAll()
         {
             using (var sqlConnection = new SqlConnection(connectionString))
@@ -86,6 +90,11 @@ namespace QLNS.Data.Repository
             }
         }
 
+        public Task<Hopdong> getById(int? id)
+        {
+            throw new NotImplementedException();
+        }
+
         public async Task Update(Hopdong entity)
         {
             using (var sqlConnection = new SqlConnection(connectionString))
@@ -107,6 +116,11 @@ namespace QLNS.Data.Repository
                     dynamicParameters,
                     commandType: CommandType.StoredProcedure);
             }
+        }
+
+        Task<Hopdong> IRepository<Hopdong>.Update(Hopdong entity)
+        {
+            throw new NotImplementedException();
         }
     }
 }
