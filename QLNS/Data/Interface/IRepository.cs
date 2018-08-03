@@ -13,7 +13,7 @@ namespace QLNS.Data.Interface
 
         Task Create(T entity);
 
-        Task<T> Update(T entity);
+        Task Update(T entity);
 
         Task Delete(int? id);
     }

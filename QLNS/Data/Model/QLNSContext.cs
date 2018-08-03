@@ -40,7 +40,6 @@ namespace QLNS.Model
         {
             if (!optionsBuilder.IsConfigured)
             {
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
                 optionsBuilder.UseSqlServer("Data Source=.;Initial Catalog=QLNS;Integrated Security=True");
             }
         }
@@ -781,7 +780,7 @@ namespace QLNS.Model
                     .HasMaxLength(16)
                     .IsUnicode(false);
 
-                entity.Property(e => e.Taikhoan1)
+                entity.Property(e => e.tendangnhap)
                     .HasColumnName("taikhoan")
                     .HasMaxLength(50)
                     .IsUnicode(false);

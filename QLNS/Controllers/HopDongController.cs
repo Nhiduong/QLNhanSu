@@ -32,7 +32,7 @@ namespace QLNS.Controllers
                 return NotFound();
             }
 
-            return View(await hopDongRepository.getById(id));
+           return View( await hopDongRepository.getById(id));
         }
 
         [HttpPost]

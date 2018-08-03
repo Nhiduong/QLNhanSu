@@ -56,6 +56,11 @@ namespace QLNS.Data.Repository
             }
         }
 
+        public Task Delete(int? id)
+        {
+            throw new NotImplementedException();
+        }
+
         public async Task<IEnumerable<Hopdong>> getAll()
         {
             using (var sqlConnection = new SqlConnection(connectionString))
@@ -69,7 +74,7 @@ namespace QLNS.Data.Repository
             }
         }
 
-        public async Task<Hopdong> getById(int id)
+        public async Task<Hopdong> getById(int? id)
         {
             using (var sqlConnection = new SqlConnection(connectionString))
             {

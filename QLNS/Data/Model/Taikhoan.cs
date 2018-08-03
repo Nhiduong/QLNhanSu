@@ -11,7 +11,7 @@ namespace QLNS.Model
         }
 
         public long Id { get; set; }
-        public string Taikhoan1 { get; set; }
+        public string tendangnhap { get; set; }
         public string Matkhau { get; set; }
         public string Salt { get; set; }
         public string Khoa { get; set; }
