@@ -12,7 +12,7 @@ namespace QLNS.Data.Repository
 {
     public class HopDongRepository : IHopDongRepository
     {
-        private readonly string connectionString = "Data Source=.;Initial Catalog=QLNS;Integrated Security=True";
+        private readonly string connectionString = @"Data Source=DESKTOP-62473AB\SQLEXPRESS;Initial Catalog=QLNS;Integrated Security=True";
 
         private SqlConnection sqlConnection;
 
@@ -23,14 +23,12 @@ namespace QLNS.Data.Repository
                 await sqlConnection.OpenAsync();
 
                 var dynamicParameters = new DynamicParameters();
-
                 dynamicParameters.Add("@sohopdong", entity.Sohopdong);
                 dynamicParameters.Add("@ten", entity.Ten);
                 dynamicParameters.Add("@noidung", entity.Noidung);
-                dynamicParameters.Add("@ngaylap", entity.Ngaylap);
-                dynamicParameters.Add("@dateadd", entity.Dateadd);
-                dynamicParameters.Add("@useradd", entity.Useradd);
-
+                dynamicParameters.Add("@ngaylap", null);
+                dynamicParameters.Add("@dateadd", null);
+                dynamicParameters.Add("@useradd", null);
                 await sqlConnection.ExecuteAsync(
                     "usp_InsertHopDong",
                     dynamicParameters,
@@ -38,9 +36,9 @@ namespace QLNS.Data.Repository
             }
         }
 
-        public async Task Delete(int id)
+        public async Task Delete(int? id)
         {
-           
+
             using (var sqlConnection = new SqlConnection(connectionString))
             {
                 await sqlConnection.OpenAsync();
@@ -99,7 +97,7 @@ namespace QLNS.Data.Repository
 
                 var dynamicParameters = new DynamicParameters();
 
-                dynamicParameters.Add("@id", entity.id);
+
                 dynamicParameters.Add("@sohopdong", entity.Sohopdong);
                 dynamicParameters.Add("@ten", entity.Ten);
                 dynamicParameters.Add("@noidung", entity.Noidung);
@@ -112,6 +110,11 @@ namespace QLNS.Data.Repository
                     dynamicParameters,
                     commandType: CommandType.StoredProcedure);
             }
+        }
+
+        Task<Hopdong> IRepository<Hopdong>.Update(Hopdong entity)
+        {
+            throw new NotImplementedException();
         }
     }
 }

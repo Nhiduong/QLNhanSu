@@ -25,12 +25,12 @@ namespace QLNS.Model
         public string Sdt { get; set; }
         public string DiachiHientai { get; set; }
         public string Email { get; set; }
-        public int? IdDonvi { get; set; }
-        public int? IdChucvu { get; set; }
         public DateTime Dateadd { get; set; }
         public long? Useradd { get; set; }
         public DateTime Dateedit { get; set; }
         public long? Useredit { get; set; }
+        public int? IdChucvu { get; set; }
+        public int? IdDonvi { get; set; }
         public long? IdTaikhoan { get; set; }
 
         public Donvi IdDonviNavigation { get; set; }
