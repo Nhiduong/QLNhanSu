@@ -27,7 +27,7 @@ namespace QLNS
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddTransient<IHopDongRepository, HopDongRepository>();
-            services.AddMvc();
+            services.AddMvcCore().AddRazorViewEngine();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -40,15 +40,37 @@ namespace QLNS
 
             app.UseMvc(routes =>
             {
+                
+                    routes.MapRoute(
+                      name: "Defaults",
+                      template: "{controller=Home}/{action=Index}/{id?}"
+                    );
+
+                //routes.MapRoute(
+                //   name: "Create",
+                //   template: "Create",
+                //   defaults: new { controller = "Home", action = "Create" });
 
 
-                routes.MapRoute(
+                //routes.MapRoute(
 
-                    name: "Details",
-                    template: "Details/{id?}"
-                //defaults: new { controller = "HopDongController", action = "Details", id="1"}
+                //    name: "Details",
+                //    template: "Details/{id?}"
+                //    //defaults: new { controller = "HopDongController", action = "Details", id="1"}
+                //                );
+                //routes.MapRoute(
 
-                );
+                //    name: "Create",
+                //    template: "CreateIndex"
+                //  //  defaults: new { controller = "HopDongController", action = "CreateIndex" }
+
+                //);
+                //routes.MapRoute(
+
+                //    name: "Delete",
+                //    template: "Delete/{id?}"
+                //                //defaults: new { controller = "HopDongController", action = "Details", id="1"}
+                //                );
 
 
             });

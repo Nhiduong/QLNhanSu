@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.0",
-    "signature": "a44b17a199791e3686ac0247a1ba11c597e17408"
+    "signature": "0f20d99630cebe9cf7dfc248074e0cb3913c7d6f"
   },
   "compilationOptions": {
     "defines": [
@@ -25,6 +25,8 @@
       "QLNS/1.0.0": {
         "dependencies": {
           "Dapper": "1.50.5",
+          "Microsoft.AspNet.Identity.Core": "2.2.2",
+          "Microsoft.AspNet.WebApi.Core": "5.2.6",
           "Microsoft.AspNetCore.All": "2.0.9",
           "Microsoft.EntityFrameworkCore": "2.0.3",
           "Microsoft.EntityFrameworkCore.Design": "2.0.3",
@@ -159,6 +161,46 @@
         },
         "compile": {
           "lib/netstandard1.6/Microsoft.AI.DependencyCollector.dll": {}
+        }
+      },
+      "Microsoft.AspNet.Identity.Core/2.2.2": {
+        "runtime": {
+          "lib/net45/Microsoft.AspNet.Identity.Core.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "0.0.0.0"
+          }
+        },
+        "compile": {
+          "lib/net45/Microsoft.AspNet.Identity.Core.dll": {}
+        }
+      },
+      "Microsoft.AspNet.WebApi.Client/5.2.6": {
+        "dependencies": {
+          "Newtonsoft.Json": "10.0.1",
+          "Newtonsoft.Json.Bson": "1.0.1"
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Net.Http.Formatting.dll": {
+            "assemblyVersion": "5.2.6.0",
+            "fileVersion": "5.2.60510.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/System.Net.Http.Formatting.dll": {}
+        }
+      },
+      "Microsoft.AspNet.WebApi.Core/5.2.6": {
+        "dependencies": {
+          "Microsoft.AspNet.WebApi.Client": "5.2.6"
+        },
+        "runtime": {
+          "lib/net45/System.Web.Http.dll": {
+            "assemblyVersion": "5.2.6.0",
+            "fileVersion": "5.2.60510.0"
+          }
+        },
+        "compile": {
+          "lib/net45/System.Web.Http.dll": {}
         }
       },
       "Microsoft.AspNetCore/2.0.4": {
@@ -4897,6 +4939,27 @@
       "sha512": "sha512-RWxdX90MY6tNF8S5lwRvJcHiBMIWwVLCxd4TGIEl3X0yAKaolY2vs4zTCvyCIVkEAMs1aInTgWkYwOjzYvAHWw==",
       "path": "microsoft.applicationinsights.dependencycollector/2.4.1",
       "hashPath": "microsoft.applicationinsights.dependencycollector.2.4.1.nupkg.sha512"
+    },
+    "Microsoft.AspNet.Identity.Core/2.2.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-bWth+6XxppUzJzLiVh/0r85SWKFR4dCHse4RgJfM30BR6of5euR5Y6U+URdouFYWyaiTaU2ySTPhvvN07cn/oQ==",
+      "path": "microsoft.aspnet.identity.core/2.2.2",
+      "hashPath": "microsoft.aspnet.identity.core.2.2.2.nupkg.sha512"
+    },
+    "Microsoft.AspNet.WebApi.Client/5.2.6": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-rMDlyePoxggkmN/qgha1+BR2Uy+dOr38xKCQOPfVNKGY07R2nYJGMTKJFE1XFgwD70RYUNazf2fqutjJF18XgQ==",
+      "path": "microsoft.aspnet.webapi.client/5.2.6",
+      "hashPath": "microsoft.aspnet.webapi.client.5.2.6.nupkg.sha512"
+    },
+    "Microsoft.AspNet.WebApi.Core/5.2.6": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-QMFixs/MvKZXjfUbV0gXxF85LKi+keu/zJKv13upg/JlcxJ+wdLSYzyHO/sgPPUuFVstgndK6Zt3VduWeqFmHQ==",
+      "path": "microsoft.aspnet.webapi.core/5.2.6",
+      "hashPath": "microsoft.aspnet.webapi.core.5.2.6.nupkg.sha512"
     },
     "Microsoft.AspNetCore/2.0.4": {
       "type": "package",

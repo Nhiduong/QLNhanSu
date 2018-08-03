@@ -4,6 +4,7 @@ using QLNS.Model;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using Dapper;
 
 namespace QLNS.Controllers
 {
@@ -36,43 +37,60 @@ namespace QLNS.Controllers
             return View(await hopDongRepository.getById(id));
         }
 
+        [Route("Create")]
+        [HttpGet]
+        public async Task<IActionResult> Create()
+        {
+            return View();
+        }
+        [Route("Create")]
         [HttpPost]
-        public async Task<IActionResult>  Create([FromBody]Hopdong hopdong)
+        public async Task<IActionResult> Create([FromForm]Hopdong hopdong)
         {
             if (ModelState.IsValid)
             {
                 await this.hopDongRepository.Create(hopdong);
                 return RedirectToAction("Index");
             }
-            return View(hopdong);
+            else
+                return Content("Hi there!");
+           
 
         }
 
-        [HttpPut("{id}")]
-        public async Task<IActionResult> Update(int id, [FromBody]Hopdong hopdong)
+        [Route("Update")]
+        [HttpGet("{id}")]
+        public async Task<IActionResult> Update(int? id)
         {
-            if (id == hopdong.Id)
+            if (id == null)
             {
                 return NotFound();
             }
 
+            return View(await hopDongRepository.getById(id));
+        }
+        [Route("Update")]
+        [HttpPost]
+        //public int ID = 
+        public async Task<IActionResult> Update([FromForm]Hopdong hopdong)
+        {
+          
+           
             if (ModelState.IsValid)
             {
-                try
-                {
+                
                     await this.hopDongRepository.Update(hopdong);
                     return RedirectToAction("Index");
-                }
-                catch (Exception)
-                {
-                    return NotFound();
-                }
+                
+                
             }
 
-            return View(hopdong);
+            else
+                return Content("Hi there!");
 
         }
 
+        [Route("Delete")]
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(int? id)
         {

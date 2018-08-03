@@ -23,12 +23,13 @@ namespace QLNS.Data.Repository
                 await sqlConnection.OpenAsync();
 
                 var dynamicParameters = new DynamicParameters();
+               
                 dynamicParameters.Add("@sohopdong", entity.Sohopdong);
                 dynamicParameters.Add("@ten", entity.Ten);
                 dynamicParameters.Add("@noidung", entity.Noidung);
-                dynamicParameters.Add("@ngaylap", null);
-                dynamicParameters.Add("@dateadd", null);
-                dynamicParameters.Add("@useradd", null);
+                dynamicParameters.Add("@ngaylap", "2018-1-1");
+                //dynamicParameters.Add("@dateadd", null);
+                dynamicParameters.Add("@useradd", 1);
                 await sqlConnection.ExecuteAsync(
                     "usp_InsertHopDong",
                     dynamicParameters,
@@ -92,7 +93,7 @@ namespace QLNS.Data.Repository
 
                 var dynamicParameters = new DynamicParameters();
 
-
+                dynamicParameters.Add("@id", entity.Id);
                 dynamicParameters.Add("@sohopdong", entity.Sohopdong);
                 dynamicParameters.Add("@ten", entity.Ten);
                 dynamicParameters.Add("@noidung", entity.Noidung);
@@ -107,9 +108,6 @@ namespace QLNS.Data.Repository
             }
         }
 
-        Task<Hopdong> IRepository<Hopdong>.Update(Hopdong entity)
-        {
-            throw new NotImplementedException();
-        }
+
     }
 }

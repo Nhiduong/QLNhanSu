@@ -10,7 +10,7 @@ namespace QLNS.Model
             Kyhopdong = new HashSet<Kyhopdong>();
         }
 
-        public long Id { get; set; }
+        public long? Id { get; set; }
         public string Sohopdong { get; set; }
         public string Ten { get; set; }
         public string Noidung { get; set; }
