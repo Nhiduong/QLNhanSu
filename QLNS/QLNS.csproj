@@ -5,15 +5,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Interface\**" />
-    <Content Remove="Interface\**" />
-    <EmbeddedResource Remove="Interface\**" />
-    <None Remove="Interface\**" />
-  </ItemGroup>
-
-  <ItemGroup>
     <Folder Include="Controllers\" />
-    <Folder Include="Data\Model\" />
+    <Folder Include="Interface\" />
     <Folder Include="wwwroot\" />
   </ItemGroup>
 

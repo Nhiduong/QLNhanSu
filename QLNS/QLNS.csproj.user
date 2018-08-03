@@ -9,11 +9,14 @@
     <WebStackScaffolding_IsReferencingScriptLibrariesSelected>True</WebStackScaffolding_IsReferencingScriptLibrariesSelected>
     <WebStackScaffolding_LayoutPageFile />
     <WebStackScaffolding_IsAsyncSelected>False</WebStackScaffolding_IsAsyncSelected>
+<<<<<<< HEAD
     <WebStackScaffolding_ViewDialogWidth>600</WebStackScaffolding_ViewDialogWidth>
     <ActiveDebugProfile>QLNS</ActiveDebugProfile>
     <WebStackScaffolding_DbContextTypeFullName>QLNS.Model.QLNSContext</WebStackScaffolding_DbContextTypeFullName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <DebuggerFlavor>ProjectDebugger</DebuggerFlavor>
+=======
+>>>>>>> 65105cbe70f0f3fab3b19e0d30206cd18ac66191
   </PropertyGroup>
 </Project>

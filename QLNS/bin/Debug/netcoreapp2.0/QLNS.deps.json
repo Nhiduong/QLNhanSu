@@ -1,7 +1,11 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.0",
+<<<<<<< HEAD
     "signature": "0f20d99630cebe9cf7dfc248074e0cb3913c7d6f"
+=======
+    "signature": "ab31c229902154e7ca1838d8f7c9650d9a8353bb"
+>>>>>>> 65105cbe70f0f3fab3b19e0d30206cd18ac66191
   },
   "compilationOptions": {
     "defines": [
@@ -25,8 +29,12 @@
       "QLNS/1.0.0": {
         "dependencies": {
           "Dapper": "1.50.5",
+<<<<<<< HEAD
           "Microsoft.AspNet.Identity.Core": "2.2.2",
           "Microsoft.AspNet.WebApi.Core": "5.2.6",
+=======
+          "Drapper": "1.2.0",
+>>>>>>> 65105cbe70f0f3fab3b19e0d30206cd18ac66191
           "Microsoft.AspNetCore.All": "2.0.9",
           "Microsoft.EntityFrameworkCore": "2.0.3",
           "Microsoft.EntityFrameworkCore.Design": "2.0.3",
@@ -57,6 +65,33 @@
         },
         "compile": {
           "lib/netstandard2.0/Dapper.dll": {}
+        }
+      },
+      "Drapper/1.2.0": {
+        "dependencies": {
+          "Dapper": "1.50.5",
+          "Drapper.Validation": "1.1.0",
+          "Newtonsoft.Json": "10.0.1"
+        },
+        "runtime": {
+          "lib/net461/Drapper.dll": {
+            "assemblyVersion": "1.2.0.0",
+            "fileVersion": "1.2.0.0"
+          }
+        },
+        "compile": {
+          "lib/net461/Drapper.dll": {}
+        }
+      },
+      "Drapper.Validation/1.1.0": {
+        "runtime": {
+          "lib/net461/Drapper.Validation.dll": {
+            "assemblyVersion": "1.1.0.0",
+            "fileVersion": "1.1.0.0"
+          }
+        },
+        "compile": {
+          "lib/net461/Drapper.Validation.dll": {}
         }
       },
       "Libuv/1.10.0": {
@@ -2688,7 +2723,7 @@
         "runtime": {
           "lib/netstandard1.3/Microsoft.Extensions.PlatformAbstractions.dll": {
             "assemblyVersion": "1.1.0.0",
-            "fileVersion": "1.1.0.21115"
+            "fileVersion": "1.1.0.30427"
           }
         },
         "compile": {
@@ -4442,8 +4477,8 @@
       "System.Security.Cryptography.Xml/4.4.2": {
         "runtime": {
           "lib/netstandard2.0/System.Security.Cryptography.Xml.dll": {
-            "assemblyVersion": "4.0.0.1",
-            "fileVersion": "4.6.26418.2"
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "4.6.26412.4"
           }
         },
         "compile": {
@@ -4911,6 +4946,20 @@
       "sha512": "sha512-1vPpX7WQmQCIb7rwlGOUoVs/yWZhVKvdhuG7WrJV+V+qsP8btnrrCqVWHENAlJxBAnUw5rhWfmuba9/Egei9MA==",
       "path": "dapper/1.50.5",
       "hashPath": "dapper.1.50.5.nupkg.sha512"
+    },
+    "Drapper/1.2.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-CmOsjMjsq5s994Vo0dQp+BIqo4rvMKgXI1Dn/EusBRl+1dapvj00ZG1JQ5CvtFIHuJFrCMw4dxtyrg5WGeiK/w==",
+      "path": "drapper/1.2.0",
+      "hashPath": "drapper.1.2.0.nupkg.sha512"
+    },
+    "Drapper.Validation/1.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-LfXBsNHBwnPwIjL/N9KdnyFEbn8x1mJ5zl6CBZ+3K5liPxd8R9EOhrQEh/To6nQDbEor3ybs9yb8WYGdQz0CAw==",
+      "path": "drapper.validation/1.1.0",
+      "hashPath": "drapper.validation.1.1.0.nupkg.sha512"
     },
     "Libuv/1.10.0": {
       "type": "package",
@@ -5559,7 +5608,7 @@
     "Microsoft.CodeAnalysis.Analyzers/1.1.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-HS3iRWZKcUw/8eZ/08GXKY2Bn7xNzQPzf8gRPHGSowX7u7XXu9i9YEaBeBNKUXWfI7qjvT2zXtLUvbN0hds8vg==",
+      "sha512": "sha512-xu1O5Odtc8ORRU/kRCe8hCK4D2VI2vQgRLm+zSCBhc+3qy/aQVqoWbIvwuFE7q0spVu9+tZyQPwaBaDL+MVNVA==",
       "path": "microsoft.codeanalysis.analyzers/1.1.0",
       "hashPath": "microsoft.codeanalysis.analyzers.1.1.0.nupkg.sha512"
     },
@@ -5993,7 +6042,7 @@
     "Microsoft.Extensions.PlatformAbstractions/1.1.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-H6ZsQzxYw/6k2DfEQRXdC+vQ6obd6Uba3uGJrnJ2vG4PRXjQZ7seB13JdCfE72abp8E6Fk3gGgDzfJiLZi5ZpQ==",
+      "sha512": "sha512-UMlN++q5qqzQ2HH+uOrKxN5fmBXMQDhrYkSaPJxhmyzfJaFPirrVr1raim/Ocq1psAZoB9+7JSAf0GDAX35wUg==",
       "path": "microsoft.extensions.platformabstractions/1.1.0",
       "hashPath": "microsoft.extensions.platformabstractions.1.1.0.nupkg.sha512"
     },
@@ -6651,7 +6700,7 @@
     "System.Linq.Queryable/4.0.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-Yn/WfYe9RoRfmSLvUt2JerP0BTGGykCZkQPgojaxgzF2N0oPo+/AhB8TXOpdCcNlrG3VRtsamtK2uzsp3cqRVw==",
+      "sha512": "sha512-wofMfNVxlVEIqJJSL690eK+WHPUK78Tg7IIEffV6mzz67MDDxmxfwmkZ6sJ/qCg54UnkMZEGCvQrDApp8HmuEA==",
       "path": "system.linq.queryable/4.0.1",
       "hashPath": "system.linq.queryable.4.0.1.nupkg.sha512"
     },
@@ -6910,7 +6959,7 @@
     "System.Security.Cryptography.Xml/4.4.2": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-1m+fKVrApgKYMRuE0MF0vGjqy4XqAp1rCtyAzMXhJajMDDytMh/rHk9hp4M7KKk3QQZoWJUvyUY7xcw74w+JiQ==",
+      "sha512": "sha512-q9Dren/YP5jhRCkDvLfuaPpMTQzP97ANvzq/OoGgwK8YdLRSTABS9oW5/23OKoM2DRCuBrh4qaecD2YNhPtuzQ==",
       "path": "system.security.cryptography.xml/4.4.2",
       "hashPath": "system.security.cryptography.xml.4.4.2.nupkg.sha512"
     },

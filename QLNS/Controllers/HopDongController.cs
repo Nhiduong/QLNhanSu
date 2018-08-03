@@ -25,7 +25,6 @@ namespace QLNS.Controllers
         }
 
         // GET: 
-        [Route("Details")]
         [HttpGet("{id}")]
         public async Task<IActionResult> Get(int? id)
         {
@@ -34,7 +33,7 @@ namespace QLNS.Controllers
                 return NotFound();
             }
 
-            return View(await hopDongRepository.getById(id));
+           return View( await hopDongRepository.getById(id));
         }
 
         [Route("Create")]
@@ -45,7 +44,11 @@ namespace QLNS.Controllers
         }
         [Route("Create")]
         [HttpPost]
+<<<<<<< HEAD
         public async Task<IActionResult> Create([FromForm]Hopdong hopdong)
+=======
+        public async Task<IActionResult> Create([FromBody]Hopdong hopdong)
+>>>>>>> 65105cbe70f0f3fab3b19e0d30206cd18ac66191
         {
             if (ModelState.IsValid)
             {
@@ -56,13 +59,18 @@ namespace QLNS.Controllers
                 return Content("Hi there!");
            
 
+            
         }
 
         [Route("Update")]
         [HttpGet("{id}")]
         public async Task<IActionResult> Update(int? id)
         {
+<<<<<<< HEAD
             if (id == null)
+=======
+            if (id == hopdong.id)
+>>>>>>> 65105cbe70f0f3fab3b19e0d30206cd18ac66191
             {
                 return NotFound();
             }

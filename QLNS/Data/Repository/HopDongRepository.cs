@@ -55,6 +55,11 @@ namespace QLNS.Data.Repository
             }
         }
 
+        public Task Delete(int? id)
+        {
+            throw new NotImplementedException();
+        }
+
         public async Task<IEnumerable<Hopdong>> getAll()
         {
             using (var sqlConnection = new SqlConnection(connectionString))

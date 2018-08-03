@@ -4,7 +4,6 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Routing;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
@@ -38,6 +37,7 @@ namespace QLNS
                 app.UseDeveloperExceptionPage();
             }
 
+<<<<<<< HEAD
             app.UseMvc(routes =>
             {
                 
@@ -75,6 +75,9 @@ namespace QLNS
 
             });
 
+=======
+            app.UseMvc();
+>>>>>>> 65105cbe70f0f3fab3b19e0d30206cd18ac66191
         }
     }
 }
