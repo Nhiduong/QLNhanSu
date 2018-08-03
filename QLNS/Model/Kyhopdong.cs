@@ -5,8 +5,8 @@ namespace QLNS.Model
 {
     public partial class Kyhopdong
     {
+        public long Id { get; set; }
         public string Sohopdong { get; set; }
-        public long IdNhanvien { get; set; }
         public string Trangthai { get; set; }
         public DateTime? NgayKy { get; set; }
         public string Thoihan { get; set; }
@@ -14,8 +14,10 @@ namespace QLNS.Model
         public long? Useradd { get; set; }
         public DateTime? Dateedit { get; set; }
         public long? Useredit { get; set; }
-        public string id_hopdong { get; set; }
+        public long? IdHopdong { get; set; }
+        public long IdNhanvien { get; set; }
+
+        public Hopdong IdHopdongNavigation { get; set; }
         public Nhanvien IdNhanvienNavigation { get; set; }
-        public Hopdong SohopdongNavigation { get; set; }
     }
 }

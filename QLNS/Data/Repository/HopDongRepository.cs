@@ -23,16 +23,12 @@ namespace QLNS.Data.Repository
                 await sqlConnection.OpenAsync();
 
                 var dynamicParameters = new DynamicParameters();
-                dynamicParameters.Add("@id", entity.Sohopdong);
                 dynamicParameters.Add("@sohopdong", entity.Sohopdong);
                 dynamicParameters.Add("@ten", entity.Ten);
                 dynamicParameters.Add("@noidung", entity.Noidung);
                 dynamicParameters.Add("@ngaylap", null);
-
                 dynamicParameters.Add("@dateadd", null);
                 dynamicParameters.Add("@useradd", null);
-                dynamicParameters.Add("@dateedit", null);
-                dynamicParameters.Add("@useredit", null);
                 await sqlConnection.ExecuteAsync(
                     "usp_InsertHopDong",
                     dynamicParameters,

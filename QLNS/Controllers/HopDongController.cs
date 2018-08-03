@@ -37,7 +37,7 @@ namespace QLNS.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create([FromBody]Hopdong hopdong)
+        public async Task<IActionResult>  Create([FromBody]Hopdong hopdong)
         {
             if (ModelState.IsValid)
             {
@@ -46,13 +46,12 @@ namespace QLNS.Controllers
             }
             return View(hopdong);
 
-            
         }
 
         [HttpPut("{id}")]
         public async Task<IActionResult> Update(int id, [FromBody]Hopdong hopdong)
         {
-            if (id == hopdong.id)
+            if (id == hopdong.Id)
             {
                 return NotFound();
             }

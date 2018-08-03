@@ -41,7 +41,7 @@ namespace QLNS.Model
             if (!optionsBuilder.IsConfigured)
             {
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
-                optionsBuilder.UseSqlServer("Data Source=.;Initial Catalog=QLNS;Integrated Security=True");
+                optionsBuilder.UseSqlServer("Data Source=DESKTOP-62473AB\\SQLEXPRESS;Initial Catalog=QLNS;Integrated Security=True");
             }
         }
 
@@ -317,18 +317,9 @@ namespace QLNS.Model
 
             modelBuilder.Entity<Hopdong>(entity =>
             {
-                entity.HasKey(e => e.Sohopdong);
-
                 entity.ToTable("hopdong");
 
-                entity.Property(e => e.Sohopdong)
-                    .HasColumnName("sohopdong")
-                    .HasMaxLength(50)
-                    .ValueGeneratedNever();
-
-                entity.Property(e => e.Batdau)
-                    .HasColumnName("batdau")
-                    .HasColumnType("date");
+                entity.Property(e => e.Id).HasColumnName("id");
 
                 entity.Property(e => e.Dateadd)
                     .HasColumnName("dateadd")
@@ -339,17 +330,16 @@ namespace QLNS.Model
                     .HasColumnName("dateedit")
                     .HasColumnType("datetime");
 
-                entity.Property(e => e.Ketthuc)
-                    .HasColumnName("ketthuc")
-                    .HasColumnType("date");
-
                 entity.Property(e => e.Ngaylap)
                     .HasColumnName("ngaylap")
                     .HasColumnType("date");
 
-                entity.Property(e => e.Noidung)
-                    .HasColumnName("noidung")
-                    .HasColumnType("text");
+                entity.Property(e => e.Noidung).HasColumnName("noidung");
+
+                entity.Property(e => e.Sohopdong)
+                    .HasColumnName("sohopdong")
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
 
                 entity.Property(e => e.Ten)
                     .HasColumnName("ten")
@@ -438,13 +428,10 @@ namespace QLNS.Model
 
             modelBuilder.Entity<Kyhopdong>(entity =>
             {
-                entity.HasKey(e => e.Sohopdong);
-
                 entity.ToTable("kyhopdong");
 
-                entity.Property(e => e.Sohopdong)
-                    .HasColumnName("sohopdong")
-                    .HasMaxLength(50)
+                entity.Property(e => e.Id)
+                    .HasColumnName("id")
                     .ValueGeneratedNever();
 
                 entity.Property(e => e.Dateadd)
@@ -456,11 +443,18 @@ namespace QLNS.Model
                     .HasColumnName("dateedit")
                     .HasColumnType("datetime");
 
+                entity.Property(e => e.IdHopdong).HasColumnName("id_hopdong");
+
                 entity.Property(e => e.IdNhanvien).HasColumnName("id_nhanvien");
 
                 entity.Property(e => e.NgayKy)
                     .HasColumnName("ngay_ky")
                     .HasColumnType("date");
+
+                entity.Property(e => e.Sohopdong)
+                    .HasColumnName("sohopdong")
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
 
                 entity.Property(e => e.Thoihan)
                     .HasColumnName("thoihan")
@@ -475,17 +469,16 @@ namespace QLNS.Model
 
                 entity.Property(e => e.Useredit).HasColumnName("useredit");
 
+                entity.HasOne(d => d.IdHopdongNavigation)
+                    .WithMany(p => p.Kyhopdong)
+                    .HasForeignKey(d => d.IdHopdong)
+                    .HasConstraintName("FK_kyhopdong_hopdong");
+
                 entity.HasOne(d => d.IdNhanvienNavigation)
                     .WithMany(p => p.Kyhopdong)
                     .HasForeignKey(d => d.IdNhanvien)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_sign_contract_employee");
-
-                entity.HasOne(d => d.SohopdongNavigation)
-                    .WithOne(p => p.Kyhopdong)
-                    .HasForeignKey<Kyhopdong>(d => d.Sohopdong)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_sign_contract_contract");
+                    .HasConstraintName("FK_kyhopdong_nhanvien");
             });
 
             modelBuilder.Entity<Kyluat>(entity =>
